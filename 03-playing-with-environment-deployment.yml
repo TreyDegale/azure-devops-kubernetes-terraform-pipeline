@@ -35,6 +35,3 @@ stages:
         deploy:
           steps:
           - script: echo "Deploy to Dev"
-steps:
-- script: echo Running on $(operatingSystem)
-  displayName: 'Run a one-line script'
