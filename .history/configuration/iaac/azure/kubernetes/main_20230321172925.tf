@@ -1,6 +1,6 @@
 resource "azurerm_resource_group" "resource_group" {
   name     = "${var.resource_group}_${var.environment}" #kubernetes_dev
-  location = var.location                               #geographical (westeurope) not directory
+  location = var.location #geographical (westeurope) not directory
 }
 
 provider "azurerm" {
@@ -13,7 +13,7 @@ resource "azurerm_kubernetes_cluster" "terraform-k8s" {
   location            = azurerm_resource_group.resource_group.location
   resource_group_name = azurerm_resource_group.resource_group.name
   dns_prefix          = var.dns_prefix
-  kubernetes_version  = 1.23
+  kubernetes_version = 1.23
 
   linux_profile {
     admin_username = "ubuntu"
@@ -24,9 +24,9 @@ resource "azurerm_kubernetes_cluster" "terraform-k8s" {
   }
 
   default_node_pool {
-    name       = "agentpool"
-    node_count = var.node_count
-    vm_size    = "standard_d2as_v5"
+    name            = "agentpool"
+    node_count      = var.node_count
+    vm_size         = "standard_d2as_v5"
   }
 
   service_principal {
