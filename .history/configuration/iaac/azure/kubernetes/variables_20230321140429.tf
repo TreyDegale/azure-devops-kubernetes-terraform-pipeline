@@ -5,7 +5,6 @@ variable client_id {
 variable client_secret {
   default = "whO8Q~hEL~cEEElpJE4BdHgYLj0fF9bALbZVFcI2"
 }
-
 variable ssh_public_key {}
 
 variable environment {
