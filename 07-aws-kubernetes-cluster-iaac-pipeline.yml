@@ -8,7 +8,7 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
-# init - backend s3 bucket
+
 - task: TerraformTaskV4@4
   inputs:
     provider: 'aws'
