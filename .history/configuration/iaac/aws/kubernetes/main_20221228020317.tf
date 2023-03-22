@@ -28,9 +28,9 @@ provider "kubernetes" {
   version                = "~> 2.12"
 }
 
-module "treydegale-cluster" {
+module "in28minutes-cluster" {
   source          = "terraform-aws-modules/eks/aws"
-  cluster_name    = "treydegale-cluster"
+  cluster_name    = "in28minutes-cluster"
   cluster_version = "1.14"
   subnets         = ["subnet-3f7b2563", "subnet-4a7d6a45"] #CHANGE
   #subnets = data.aws_subnet_ids.subnets.ids
@@ -49,11 +49,11 @@ module "treydegale-cluster" {
 }
 
 data "aws_eks_cluster" "cluster" {
-  name = module.treydegale-cluster.cluster_id
+  name = module.in28minutes-cluster.cluster_id
 }
 
 data "aws_eks_cluster_auth" "cluster" {
-  name = module.treydegale-cluster.cluster_id
+  name = module.in28minutes-cluster.cluster_id
 }
 
 
